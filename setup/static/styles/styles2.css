@@ -1,0 +1,186 @@
+/* CSS para Templates de eBook */
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corpo do documento */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background: #f4f4f4;
+    color: #333;
+    padding: 20px;
+}
+
+/* Cabeçalho */
+header {
+    background: #007BFF;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Navegação */
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Sumário Lateral */
+nav {
+    position: fixed;
+    left: 20px;
+    top: 100px;
+    width: 200px;
+    background: #007BFF;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+nav ul {
+    flex-direction: column;
+    gap: 5px;
+}
+
+/* Conteúdo Principal */
+main {
+    margin-left: 240px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Títulos */
+h1, h2 {
+    margin-bottom: 20px;
+}
+
+/* Artigos */
+article {
+    margin-bottom: 40px;
+}
+
+article p {
+    margin-bottom: 20px;
+}
+
+/* Imagens */
+.images {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.images img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Accordion */
+.accordion {
+    margin-bottom: 20px;
+}
+
+.accordion-item {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.accordion-header {
+    background: #007BFF;
+    color: #fff;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.accordion-content {
+    display: none;
+    padding: 20px;
+}
+
+.accordion-content article {
+    margin-bottom: 0;
+}
+
+/* Tabs */
+.tabs {
+    margin-bottom: 20px;
+}
+
+.tab-list {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 2px solid #ddd;
+}
+
+.tab-list li {
+    margin-bottom: -2px;
+}
+
+.tab-list li a {
+    display: block;
+    padding: 10px 20px;
+    background: #007BFF;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px 5px 0 0;
+}
+
+.tab-list li a:hover,
+.tab-list li a.active {
+    background: #0056b3;
+}
+
+.tab-content {
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-top: none;
+    border-radius: 0 0 5px 5px;
+}
+
+.tab {
+    display: none;
+}
+
+.tab.active {
+    display: block;
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+    background: #007BFF;
+    color: #fff;
+    border-radius: 5px;
+}

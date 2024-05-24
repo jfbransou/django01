@@ -1,0 +1,27 @@
+virtualenv venv
+source venv/bin/activate
+pip install django
+pip freeze
+pip freeze > requeriments.txt
+django-admin startproject setup .
+python manage.py runserver
+pip install python-dotenv
+pip freeze > requeriments.txt
+# criar arquivo .env
+# colocar a SECRET_KEY no .env
+# referenciar a secret_key no senttings.py
+# criar na raiz o arquivo .gitignore
+git init
+git add .
+git commit -m "projeto django 01"
+
+# ir la no git hub e pegar o endereço do repositorio... para ser referenciado.
+git remote add origin https://github.com/jfbransou/django01.git
+git push origin master  
+
+########################################
+python manage.py help
+
+python manage.py startapp galeria
+
+python manage.py collectstatic

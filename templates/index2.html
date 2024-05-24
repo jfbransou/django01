@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <script src="{% static 'js/accordion.js' %}" defer></script>
+</head>
+<body>
+    <header>
+        <h1>{{ title }}</h1>
+    </header>
+    <div class="accordion">
+        {% for chapter in chapters %}
+            <div class="accordion-item">
+                <h2 class="accordion-header">{{ chapter.title }}</h2>
+                <div class="accordion-content">
+                    <article>
+                        {{ chapter.content | safe }}
+                    </article>
+                    {% if chapter.images %}
+                        <div class="images">
+                            {% for image in chapter.images %}
+                                <img src="{{ image.url }}" alt="{{ image.alt }}">
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    <footer>
+        <p>&copy; 2024 Nome do Sistema</p>
+    </footer>
+</body>
+</html>

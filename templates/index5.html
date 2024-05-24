@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>{{ title }}</h1>
+        <nav>
+            <ul>
+                {% for chapter in chapters %}
+                    <li><a href="#{{ chapter.id }}">{{ chapter.title }}</a></li>
+                {% endfor %}
+            </ul>
+        </nav>
+    </header>
+    <main>
+        {% for chapter in chapters %}
+            <section id="{{ chapter.id }}">
+                <h2>{{ chapter.title }}</h2>
+                <article>
+                    {{ chapter.content | safe }}
+                </article>
+                {% if chapter.images %}
+                    <div class="images">
+                        {% for image in chapter.images %}
+                            <img src="{{ image.url }}" alt="{{ image.alt }}">
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </section>
+        {% endfor %}
+    </main>
+    <footer>
+        <p>&copy; 2024 Nome do Sistema</p>
+    </footer>
+</body>
+</html>
